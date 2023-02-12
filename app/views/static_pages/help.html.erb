@@ -1,0 +1,11 @@
+<% provide(:title, "Help") %>
+
+<% if user_signed_in? %>
+    <%= current_user.email %>
+    <%= link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "btn btn-danger" %>
+<% else %>
+    <h1>StaticPages#help</h1>
+    <p>Find me in app/views/static_pages/help.html.erb</p>
+    <%= link_to "Sign in", new_user_session_path %>
+    <%= link_to "Sign up", new_user_registration_path %>
+<% end %>
