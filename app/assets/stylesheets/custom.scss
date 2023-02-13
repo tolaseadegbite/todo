@@ -1,0 +1,42 @@
+a {
+    text-decoration: none;
+    color: #000;
+}
+.striker {
+    text-decoration: line-through;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Righteous', cursive;
+}
+.btn {
+    border-radius: 4px;
+}
+.no-cursor {
+    cursor: text;
+}
+td.description {
+    font-size: 1.1em;
+}
+// .pagination>li {
+//     min-width: 50px;
+// }
+// .pagination>li a {
+//     border: 1px solid #000;
+//     // padding: 3px;
+//     &:hover,&:focus {
+//         background-color: #000;
+//         color: #fff;
+//     }
+// }
+// .pagination>li.active {
+//     background-color: #000;
+//     color: #fff;
+//     &:hover,&:focus {
+//         background-color: #000;
+//         color: #fff;
+//     }
+// }

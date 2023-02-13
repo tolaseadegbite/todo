@@ -1,0 +1,9 @@
+<%= form_with(model: @list) do |f| %>
+    <%#= render 'lists/error_messages' %>
+
+    <div class="d-flex me-2">
+        <%= f.text_field :description, placeholder: "New Todo", class: "form-control me-2" %>
+        <%= f.submit "Submit", class: "btn btn-outline-dark text-light border-light" %>
+    </div>
+
+<% end %>

@@ -1,0 +1,9 @@
+<p>
+    <% unless @completed_items.blank? %>
+        <%= link_to "Delete completed items", lists_delete_completed_path, class: "text-danger" %> |
+    <% end %>
+
+    <% if @lists.any? %> 
+        <%= link_to "Delete all", lists_delete_all_path, class: "text-danger" %>
+    <% end %>
+</p>

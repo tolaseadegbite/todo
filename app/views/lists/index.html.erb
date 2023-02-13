@@ -1,0 +1,29 @@
+<div class="container py-5">
+
+    <%= render 'error_messages' %>
+
+    <%= render 'button_group' %>
+
+    <%#= will_paginate %>
+
+    <table class="table table-bordered">
+        <tbody>
+            <% if @lists.any? %>
+                <%= render @lists %>
+            <% else %>
+                <p class="text-info">No item created.</p>
+            <% end %>
+        </tbody>
+    </table>
+    <%#= will_paginate %>
+
+    <p>
+        <% unless @completed_items.blank? %>
+            <%= link_to "Delete completed items", lists_delete_completed_path, class: "text-danger" %> |
+        <% end %>
+
+        <% if @lists.any? %> 
+            <%= link_to "Delete all", lists_delete_all_path, class: "text-danger" %>
+        <% end %>
+    </p>
+</div>

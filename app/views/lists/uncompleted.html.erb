@@ -1,0 +1,21 @@
+<% provide(:title, "Uncompleted list") %>
+
+<div class="container py-5">
+
+    <%= render 'button_group' %>
+
+    <table class="table table-bordered">
+        <tbody>
+            <% if @lists.any? %>
+                <%= render @lists %>
+            <% else %>
+                <p class="text-info">No item created.</p>
+            <% end %>
+            <%#= will_paginate %>
+        </tbody>
+    </table>
+
+    <% unless @lists.blank? %>
+        <%= link_to "Delete uncompleted items", lists_delete_uncompleted_path, class: "text-danger" %>
+    <% end %>
+</div>

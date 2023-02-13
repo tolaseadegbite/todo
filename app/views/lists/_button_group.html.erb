@@ -1,0 +1,18 @@
+<div class="text-center">
+    <div class="btn-group mb-3" role="group" aria-label="Basic outlined example">
+        <%= link_to lists_path, class: "btn btn-outline-dark position-relative #{'btn-dark text-white no-cursor' if controller_name == "lists" && action_name == "index"}" do %>
+            ALL
+            <span class="badge text-bg-dark border border-2 border-light"><%= current_user.lists.count %></span>
+        <% end %>
+
+        <%= link_to lists_completed_path, class: "btn btn-outline-dark #{'btn-dark text-white no-cursor' if controller_name == "lists" && action_name == "completed"}" do %>
+            COMPLETED
+            <span class="badge text-bg-dark border border-2 border-light"><%= current_user.completed.count %></span>
+        <% end %>
+
+        <%= link_to lists_uncompleted_path, class: "btn btn-outline-dark #{'btn-dark text-white no-cursor' if controller_name == "lists" && action_name == "uncompleted"}" do %>
+            UNCOMPLETED
+            <span class="badge text-bg-dark border border-2 border-light"><%= current_user.uncompleted.count %></span>
+        <% end %>
+    </div>
+</div>

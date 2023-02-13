@@ -4,10 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # Returns the hash digest of the given string.
-  def self.digest(string)
-      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  BCrypt::Engine.cost
-      BCrypt::Password.create(string, cost: cost)
+  has_many :lists, dependent: :destroy
+
+  def completed
+    List.where(user_id: id, completed: true)
+  end
+
+  def uncompleted
+    List.where(user_id: id, completed: false)
   end
 end
