@@ -1,5 +1,19 @@
-# one: {}
-# # column: value
-# #
-# two: {}
-# # column: value
+tolase:
+  email: tolase@simplelist.com
+
+dev:
+  email: dev@simplelist.com
+
+archer:
+  email: archer@simplelist.com
+
+john:
+  email: john@simplelist.com
+
+lana:
+  email: jane@simplelist.com
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  email: <%= "user-#{n}@example.com" %>
+<% end %>

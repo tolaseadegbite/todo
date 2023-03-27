@@ -10,10 +10,6 @@ Rails.application.routes.draw do
   get 'lists/completed'
   get 'lists/uncompleted'
 
-  
-  # get 'static_pages/delete_completed'
-  # get 'static_pages/delete_all'
-
   root "lists#index"
 
   resources :lists
